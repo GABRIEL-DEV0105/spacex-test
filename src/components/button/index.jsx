@@ -2,6 +2,9 @@ import { Button as CkButton } from '@chakra-ui/react'
 
 export const Button = ({ action, children }) => (
     <CkButton
+        _active={{
+            color: 'white'
+        }}
         onClick={action}
         m='0'
         fontFamily={'Mohave'}

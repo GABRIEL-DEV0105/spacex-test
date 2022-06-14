@@ -1,11 +1,8 @@
 import { Heading, Flex, VStack } from "@chakra-ui/react";
 import { Items } from "./items";
 
-export const Body = ({
-  nextLaunchApi,
-  latestLaunchApi,
-  pastLaunchApi,
-  upComingLaunchApi }) => {
+export const Body = ({ apiData }) => {
+
 
   return (
     <VStack>
@@ -16,11 +13,7 @@ export const Body = ({
         w='100%'
         h='100vh'
         paddingY='50px'>
-        <Items
-          next={nextLaunchApi}
-          latest={latestLaunchApi}
-          past={pastLaunchApi}
-          upComing={upComingLaunchApi} />
+        {!!apiData && <Items apiData={apiData} />}
       </Flex >
     </VStack>
   )

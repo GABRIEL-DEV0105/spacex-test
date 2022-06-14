@@ -1,15 +1,15 @@
 import { Box, HStack, Image } from '@chakra-ui/react'
-import { Button } from './button'
+import { Button } from '../button'
 import logo from "../image/logo.png"
 
 
-export const Header = ({ nextLaunch, latestLaunch, pastLaunch, upComingLaunch }) => {
+export const Header = ({ next, latest, past, upComing }) => {
 
   const objButton = [
-    { action: nextLaunch, label: 'próximo lançameto' },
-    { action: latestLaunch, label: 'ultimo lançamento' },
-    { action: pastLaunch, label: 'futuros lançamentos' },
-    { action: upComingLaunch, label: 'lançamentos passados' }
+    { action: next, label: 'próximo lançameto' },
+    { action: latest, label: 'ultimo lançamento' },
+    { action: past, label: 'lançamentos passados' },
+    { action: upComing, label: 'futuros lançamentos' }
   ]
 
   return (

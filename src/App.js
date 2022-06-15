@@ -6,15 +6,19 @@ import { api } from './components/services/api';
 
 function App() {
   const [apiData, setApiData] = useState(null);
-  console.log(apiData)
+  const [headerTitle, setHeaderTitle] = useState(null);
+
   const getNextLaunch = () => {
+    setHeaderTitle('Próximo Lançameto')
     api.get('/next')
       .then(response => {
         setApiData([response.data])
+
       })
   }
 
   const getLatestLaunch = () => {
+    setHeaderTitle('Último Lançameto')
     api.get('/latest')
       .then(response => {
         setApiData([response.data])
@@ -22,6 +26,7 @@ function App() {
   }
 
   const getPastLaunch = () => {
+    setHeaderTitle('Lançametos Passados')
     api.get('/past')
       .then(response => {
         setApiData(response.data)
@@ -29,6 +34,7 @@ function App() {
   }
 
   const getUpComingLaunch = () => {
+    setHeaderTitle('Lançametos Futuros')
     api.get('/upcoming')
       .then(response => {
         setApiData(response.data)
@@ -44,7 +50,9 @@ function App() {
         past={getPastLaunch}
         upComing={getUpComingLaunch}
       />
-      <Body apiData={apiData} />
+      <Body
+        apiData={apiData}
+        headerTitle={headerTitle} />
     </VStack>
 
   );

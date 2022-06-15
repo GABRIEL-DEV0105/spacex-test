@@ -8,7 +8,7 @@ export const Header = ({ next, latest, past, upComing }) => {
 
   const objButton = [
     { action: next, label: 'próximo lançameto' },
-    { action: latest, label: 'ultimo lançamento' },
+    { action: latest, label: 'último lançamento' },
     { action: past, label: 'lançamentos passados' },
     { action: upComing, label: 'futuros lançamentos' }
   ]

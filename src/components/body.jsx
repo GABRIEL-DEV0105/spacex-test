@@ -1,12 +1,11 @@
 import { Heading, Flex, VStack } from "@chakra-ui/react";
 import { Items } from "./items";
 
-export const Body = ({ apiData }) => {
-
+export const Body = ({ apiData, headerTitle }) => {
 
   return (
     <VStack>
-      <Heading color='white'>Lançamentos Passados</Heading>
+      <Heading color='white'>{headerTitle}</Heading>
       <Flex
         display='flex'
         justifyContent='space-around'

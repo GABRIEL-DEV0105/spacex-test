@@ -19,11 +19,19 @@ export const Items = ({ apiData }) => {
               h='200px'
               src={`${e.links.patch.small}`} />
 
-            <Heading as='h4' size='md'>
+            <Heading as='h4' size='md' maxH='24px'>
               {e.name}
             </Heading>
-            <Text fontSize='xs' marginTop='20px' h='50px'>
-              SpaceX CRS-6, também conhecida como SpX-6, foi uma (...)
+            <Text
+              maxW='226px'
+              whiteSpace='nowrap'
+              overflow='hidden'
+              textOverflow='ellipsis'
+              h='50px'
+              fontSize='xs'
+              marginTop='20px'
+            >
+              {e.details}
             </Text>
             <Button h='25px' bg='#030508' color='white'>ver mais</Button>
           </Center>

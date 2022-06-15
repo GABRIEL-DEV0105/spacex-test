@@ -16,7 +16,7 @@ export const Items = ({ apiData }) => {
           <Center flexDirection='column' p='12px'>
             <Image
               justifyContent='center'
-              w='200px'
+              h='200px'
               src={`${e.links.patch.small}`} />
 
             <Heading as='h4' size='md'>

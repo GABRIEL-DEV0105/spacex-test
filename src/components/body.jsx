@@ -5,7 +5,7 @@ export const Body = ({ apiData, headerTitle }) => {
 
   return (
     <VStack>
-      <Heading color='white'>{headerTitle}</Heading>
+      <Heading paddingTop='50px' color='white'>{headerTitle}</Heading>
       <Flex
         display='flex'
         justifyContent='space-around'

@@ -1,4 +1,13 @@
-import { Button, Center, Heading, Image, Text, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Button,
+  Center,
+  Heading,
+  Image,
+  Text,
+  Grid,
+  GridItem,
+  Link
+} from "@chakra-ui/react";
 
 
 export const Items = ({ apiData }) => {
@@ -33,7 +42,16 @@ export const Items = ({ apiData }) => {
             >
               {e.details}
             </Text>
-            <Button h='25px' bg='#030508' color='white'>ver mais</Button>
+            <Link
+              href={e.links.wikipedia}
+              isExternal>
+              <Button
+                textDecoration='none'
+                h='25px'
+                bg='#030508'
+                color='white'
+              >ver mais</Button>
+            </Link>
           </Center>
         </GridItem>
 
@@ -43,3 +61,5 @@ export const Items = ({ apiData }) => {
 
   )
 }
+
+

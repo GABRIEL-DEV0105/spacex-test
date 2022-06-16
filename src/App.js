@@ -11,7 +11,7 @@ function App() {
   const [event, setEvent] = useState('nextLaunch')
   
   const handleEvent = (event) => setEvent(event)
-  
+
   useEffect(() => {
     const getData = async () => {
       const data = await SERVICE[event]()

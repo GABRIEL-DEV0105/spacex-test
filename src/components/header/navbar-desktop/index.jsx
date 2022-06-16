@@ -1,7 +1,7 @@
 import { Button, HStack } from "@chakra-ui/react"
 import { theme } from "../../../styles/theme"
 
-export const NavbarDesktop = ({ itensMenuList }) => {
+export const NavbarDesktop = ({ itensMenuList, handleEvent }) => {
   return (
     <HStack>
       {itensMenuList.map(item => (
@@ -10,7 +10,7 @@ export const NavbarDesktop = ({ itensMenuList }) => {
           colorScheme={"light"}
           fontSize="sm"
           key={item.label}
-          onClick={item.action}
+          onClick={() => handleEvent(item.event)}
           variant="ghost"
         >
           {item.label}

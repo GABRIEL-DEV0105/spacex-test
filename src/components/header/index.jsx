@@ -1,27 +1,12 @@
 import { Flex, HStack, Image, useMediaQuery } from '@chakra-ui/react'
 import { theme } from '../../styles/theme'
 import { NavbarMobile } from './navbar-mobile'
-import { useMemo } from 'react'
 import { NavbarDesktop } from './navbar-desktop'
+import { itensNavbar } from './constants'
 
-
-export const Header = ({
-  nextLaunch,
-  latestLaunch,
-  pastLaunch,
-  upComingLaunch
-}) => {
+export const Header = ({ handleEvent }) => {
   const [isLargerThan1025] = useMediaQuery('(min-width: 1025px)')
   
-  const itensNavbar = useMemo(() => 
-    [
-      { action: nextLaunch, label: 'Próximo Lançamento' },
-      { action: latestLaunch, label: 'Último Lançamento' },
-      { action: pastLaunch, label: 'Futuros Lançamentos' },
-      { action: upComingLaunch, label: 'Lançamentos Passados' }
-    ]
-  ,[nextLaunch, latestLaunch, pastLaunch, upComingLaunch])
-
   return (
     <HStack
       alignItems='center'
@@ -39,8 +24,8 @@ export const Header = ({
         />
       </Flex>
       {isLargerThan1025
-        ? <NavbarDesktop itensMenuList={itensNavbar} />
-        : <NavbarMobile itensMenuList={itensNavbar} />
+        ? <NavbarDesktop itensMenuList={itensNavbar} handleEvent={handleEvent} />
+        : <NavbarMobile itensMenuList={itensNavbar} handleEvent={handleEvent} />
       }
     </HStack>
 

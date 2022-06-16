@@ -13,12 +13,12 @@ import { useRef } from "react"
 import {HiMenu} from "react-icons/hi"
 import { theme } from "../../../styles/theme"
 
-export const NavbarMobile = ({ itensMenuList }) => {
+export const NavbarMobile = ({ itensMenuList, handleEvent }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
 
-  const handleClick = (fn) => {
-    fn()
+  const handleClick = (event) => {
+    handleEvent(event)
     onClose()
   }
 
@@ -48,7 +48,7 @@ export const NavbarMobile = ({ itensMenuList }) => {
             {itensMenuList.map(item => (
               <Box
                 key={item.label}
-                onClick={() => handleClick(item.action)}
+                onClick={() => handleClick(item.event)}
                 w="100%"
                 _hover={{ bg: theme.colors.light[500] }}
               >

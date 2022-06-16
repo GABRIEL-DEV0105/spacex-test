@@ -1,49 +1,30 @@
 import { Flex } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { Content } from './components/content';
 import { Header } from './components/header'
-import { api } from './services/api'
-
+import { TITLE } from './components/header/constants';
+import { SERVICE } from './services/api'
 
 function App() {
-  const getNextLaunch = () => {
-    api.get('/next')
-      .then(response => {
-        // setNextLaunchApi(response.data)
-        console.log('next', response)
-      })
-  }
-  const getLatestLaunch = () => {
-    api.get('/latest')
-      .then(response => {
-        // setLatestLaunchApi(response.data)
-        console.log('last', response)
-
-      })
-  }
-
-  const getPastLaunch = () => {
-    api.get('/past')
-      .then(response => {
-        // setPastLaunchApi(response.data)
-        console.log('past', response)
-      })
-  }
-
-  const getUpComingLaunch = () => {
-    api.get('/upcoming')
-      .then(response => {
-        // setUpComingLaunchApi(response.data)
-        console.log('up', response)
-      })
-  }
+  const [launches, setLaunches] = useState([])
+  const [titleContent, setTitleContent] = useState('')
+  const [event, setEvent] = useState('nextLaunch')
+  
+  const handleEvent = (event) => setEvent(event)
+  
+  useEffect(() => {
+    const getData = async () => {
+      const data = await SERVICE[event]()
+      setLaunches(data)
+      setTitleContent(TITLE[event])
+    }
+    getData()
+  }, [event])
 
   return (
     <Flex direction="column" minH="100vh" w="100%">
-      <Header
-        latestLaunch={getLatestLaunch}
-        nextLaunch={getNextLaunch}
-        pastLaunch={getPastLaunch}
-        upComingLaunch={getUpComingLaunch}
-      />
+      <Header handleEvent={handleEvent} />
+      <Content launches={launches} titlePage={titleContent}/>
     </Flex>
 
   );

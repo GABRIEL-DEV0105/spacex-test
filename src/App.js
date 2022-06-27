@@ -43,7 +43,7 @@ function App() {
 
 
   return (
-    <VStack bg='#292929' h={'2000px'}>
+    <VStack bg='#292929' minH='100vh'>
       <Header
         next={getNextLaunch}
         latest={getLatestLaunch}

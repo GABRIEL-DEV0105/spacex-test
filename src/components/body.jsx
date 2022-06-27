@@ -1,4 +1,4 @@
-import { Heading, Flex, VStack } from "@chakra-ui/react";
+import { Heading, Flex, VStack, Button } from "@chakra-ui/react";
 import { Items } from "./items";
 
 export const Body = ({ apiData, headerTitle }) => {
@@ -7,8 +7,8 @@ export const Body = ({ apiData, headerTitle }) => {
     <VStack>
       <Heading paddingTop='50px' color='white'>{headerTitle}</Heading>
       <Flex
+        flexDirection='row'
         display='flex'
-        justifyContent='space-around'
         w='100%'
         h='100vh'
         paddingY='50px'>

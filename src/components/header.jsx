@@ -1,6 +1,6 @@
 import { Box, HStack, Image } from '@chakra-ui/react'
 
-import { Button } from '../button'
+import { Button } from './button'
 import logo from "../image/logo.png"
 
 
@@ -16,8 +16,7 @@ export const Header = ({ next, latest, past, upComing }) => {
   return (
     <HStack
       w='100%'
-      maxH='110px'
-      minH='50px'
+      h='10%'
       bg='#030508'
       justifyContent='space-around'
     >

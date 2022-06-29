@@ -9,8 +9,6 @@ export const Body = ({ apiData, headerTitle }) => {
       <Flex
         flexDirection='row'
         display='flex'
-        w='100%'
-        h='100vh'
         paddingY='50px'>
         {!!apiData && <Items apiData={apiData} />}
       </Flex >

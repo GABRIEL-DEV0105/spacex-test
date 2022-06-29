@@ -6,9 +6,9 @@ import {
   Text,
   Grid,
   GridItem,
-  Link
+  Link,
 } from "@chakra-ui/react";
-
+import breve from './../image/breve.png'
 
 export const Items = ({ apiData }) => {
 
@@ -26,7 +26,9 @@ export const Items = ({ apiData }) => {
             <Image
               justifyContent='center'
               h='200px'
-              src={`${e.links.patch.small}`} />
+              src={e.links.patch.small
+                ? e.links.patch.small
+                : breve} />
 
             <Heading as='h4' size='md' maxH='24px'>
               {e.name}
@@ -54,8 +56,8 @@ export const Items = ({ apiData }) => {
             </Link>
           </Center>
         </GridItem>
-
       ))}
+
 
     </Grid>
 

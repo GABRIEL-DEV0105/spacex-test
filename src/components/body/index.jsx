@@ -1,4 +1,4 @@
-import { Heading, Flex, VStack, Button } from "@chakra-ui/react";
+import { Heading, Flex, VStack } from "@chakra-ui/react";
 import { Items } from "../items";
 
 export const Body = ({ apiData, headerTitle }) => {

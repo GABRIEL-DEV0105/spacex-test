@@ -1,11 +1,11 @@
 import { Heading, Flex, VStack, Button } from "@chakra-ui/react";
-import { Items } from "./items";
+import { Items } from "../items";
 
 export const Body = ({ apiData, headerTitle }) => {
 
   return (
     <VStack>
-      <Heading paddingTop='50px' color='white'>{headerTitle}</Heading>
+      {!!apiData && <Heading paddingTop='50px' color='white'>{headerTitle}</Heading>}
       <Flex
         flexDirection='row'
         display='flex'

@@ -8,7 +8,7 @@ import {
   GridItem,
   Link,
 } from "@chakra-ui/react";
-import breve from './../image/breve.png'
+import breve from './../../image/breve.png'
 
 export const Items = ({ apiData }) => {
 

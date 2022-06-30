@@ -1,7 +1,7 @@
 import { Box, HStack, Image } from '@chakra-ui/react'
 
-import { Button } from './button'
-import logo from "../image/logo.png"
+import { Button } from '../button'
+import logo from "../../image/logo.png"
 
 
 export const Header = ({ next, latest, past, upComing }) => {

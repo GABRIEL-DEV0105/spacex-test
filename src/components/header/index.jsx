@@ -1,51 +1,31 @@
-import { Box, HStack, Image } from '@chakra-ui/react'
+import { HStack, useMediaQuery } from "@chakra-ui/react"
+import { Desktop } from "./desktop"
+import { Mobile } from "./mobile"
 
-import { Button } from '../button'
-import logo from "../../image/logo.png"
+export const SideBar = ({ next, latest, past, upComing }) => {
 
+    const [isLargerThan1025] = useMediaQuery('(min-width: 840px)')
 
-export const Header = ({ next, latest, past, upComing }) => {
+    return (
+        <HStack
+            w='100%'
+            h='10%'
+            bg='#030508'
+            justifyContent='space-around'
+        >
+            {isLargerThan1025
+                ? <Desktop
+                    next={next}
+                    latest={latest}
+                    past={past}
+                    upComing={upComing} />
+                : <Mobile
+                    next={next}
+                    latest={latest}
+                    past={past}
+                    upComing={upComing} />}
+        </HStack>
 
-  const objButton = [
-    { action: next, label: 'próximo lançameto' },
-    { action: latest, label: 'último lançamento' },
-    { action: past, label: 'lançamentos passados' },
-    { action: upComing, label: 'futuros lançamentos' }
-  ]
-
-  return (
-    <HStack
-      w='100%'
-      h='10%'
-      bg='#030508'
-      justifyContent='space-around'
-    >
-      <Box
-        display='flex'
-        flexDirection='row'
-        alignItems='center'
-        w='650px'
-        justifyContent='space-around'
-
-      >
-        <Image
-          h='120px'
-          paddingBottom='12px'
-          objectFit='cover'
-          src={logo}
-          alt='logo-spaceX'
-        />
-
-        {
-          objButton.map((e) => (
-            <Button
-              action={e.action}
-              key={e.label}>{e.label}</Button>
-          ))
-        }
-      </Box>
-
-    </HStack>
-
-  )
+    )
 }
+

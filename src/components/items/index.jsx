@@ -4,18 +4,26 @@ import {
   Heading,
   Image,
   Text,
-  Grid,
-  GridItem,
   Link,
+  Box,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import breve from './../../image/breve.png'
 
+
 export const Items = ({ apiData }) => {
 
+  const gridColumns = [
+    1,
+    2,
+    3,
+    apiData.length > 4 ? 4 : apiData.length
+  ]
+
   return (
-    <Grid templateColumns={`repeat(${apiData.length > 4 ? 4 : apiData.length}, 1fr)`} gap={6}>
+    <SimpleGrid columns={gridColumns} spacing='1rem'>
       {apiData.map(e => (
-        <GridItem
+        <Box
           key={e.name}
           bg='#E1E9FC'
           h='350px'
@@ -55,11 +63,10 @@ export const Items = ({ apiData }) => {
               >ver mais</Button>
             </Link>
           </Center>
-        </GridItem>
+        </Box>
       ))}
+    </SimpleGrid>
 
-
-    </Grid>
 
   )
 }

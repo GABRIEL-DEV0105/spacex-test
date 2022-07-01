@@ -1,6 +1,6 @@
 import { VStack } from '@chakra-ui/react';
 import { useState } from 'react'
-import { Header } from './components/header'
+import { SideBar } from './components/header'
 import { Body } from './components/body';
 import { api } from './components/services/api';
 
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <VStack bg='#292929' minH='100vh'>
-      <Header
+      <SideBar
         next={getNextLaunch}
         latest={getLatestLaunch}
         past={getPastLaunch}

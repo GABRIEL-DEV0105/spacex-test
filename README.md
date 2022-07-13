@@ -1,8 +1,3 @@
-
-
-<p align="center">the Launch Spacex project aims to show the user past and future launches through the SpaceX API.</p>
-
-------------------------------------------------------------
 <h1 align="center" style="font-weight: bold;">Launch SpaceX 🚀</h1>
 
 <p align="center">
@@ -13,11 +8,7 @@
 </p>
 
 <p align="center">
-    <b>Simple description of what your project do or how to use it</b>
-</p>
-
-<p align="center">
-     <a href="PROJECT__URL">📱 Visit this Project</a>
+    <b>the Launch Spacex project aims to show the user past and future launches through the SpaceX API</b>
 </p>
 
 <h2 id="layout">🎨 Layout</h2>
@@ -30,8 +21,8 @@
 
 - list of all technologies you used
 - react
-- styled components
-- another example
+- charkaui
+- axios
 
 <h2 id="started">🚀 Getting started</h2>
 
@@ -49,7 +40,7 @@ Here you list all prerequisites necessary for running your project. For example:
 How to clone your project
 
 ```bash
-git clone your-project-url-in-github
+[your-project-url-in-github](https://github.com/GABRIEL-DEV0105/spacex-test.git)
 ```
 
 <h3>Starting</h3>
